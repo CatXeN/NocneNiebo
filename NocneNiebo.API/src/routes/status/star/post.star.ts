@@ -6,14 +6,15 @@ import { checkPrismaError } from '../../../utils'
 
 
 export const postStar: RequestHandler = async (req, res) => {
-    const { name, description } = req.body
+    const { name, description, constelationId } = req.body
 
     try {
         const createdStar = await prisma.star.create({
             data: {
                 id: v4(),
                 name,
-                description
+                description,
+                constelationId
             }
         })
 

@@ -14,10 +14,13 @@ model Star {
   id String @id
   name String
   description String
+  constellation Constellation @relation(fields: [constelationId], references: [id])
+  constelationId String
 }
 
 model Constellation {
   id String @id
   name String
   description String
+  stars Star[]
 }

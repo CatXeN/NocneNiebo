@@ -9,6 +9,9 @@ export const getConstellation: RequestHandler = async (req, res) => {
         const constellation = await prisma.constellation.findUnique({
             where: {
                 id: id
+            },
+            include: {
+                stars: true
             }
         })
 
