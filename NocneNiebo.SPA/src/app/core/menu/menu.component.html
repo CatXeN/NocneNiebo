@@ -1,0 +1,23 @@
+<nav class="menu">
+  <div class="header">
+    <h2>
+      Nocne niebo
+      <mat-icon>cloud</mat-icon>
+    </h2>
+  </div>
+
+  <ul class="menu__list">
+    <li class="menu__list--item">
+      <mat-icon fontIcon="grid_view"></mat-icon>
+      <a [routerLink]="['dashboard']" [routerLinkActive]="['is-active']">Dashboard</a>
+    </li>
+    <li class="menu__list--item">
+      <mat-icon fontIcon="star"></mat-icon>
+      <a [routerLink]="['stars']" [routerLinkActive]="['is-active']">Gwiazdy</a>
+    </li>
+    <li class="menu__list--item">
+      <mat-icon fontIcon="insights"></mat-icon>
+      <a [routerLink]="['constellations']" [routerLinkActive]="['is-active']">Konstelacje</a>
+    </li>
+  </ul>
+</nav>

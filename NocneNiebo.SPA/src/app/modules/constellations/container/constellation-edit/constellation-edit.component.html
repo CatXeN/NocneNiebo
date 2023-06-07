@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Dodaj nowa konstelacje</h2>
+
+  <form [formGroup]="constellationForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nazwa</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Opis</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </form>
+
+  <div class="action-panel">
+    <button class="cancel-constellation" [routerLink]="['/constellations']" mat-raised-button color="warn">Anuluj</button>
+    <button class="add-constellation" (click)="add()" *ngIf="isNew === true" mat-raised-button color="primary">Dodaj</button>
+    <button class="add-constellation" (click)="save()" *ngIf="isNew === false" mat-raised-button color="primary">Zapisz</button>
+  </div>
+
+  <br>
+  <h3>W skład konstelacji wchodzą:</h3>
+  <mat-list class="list-stars" *ngFor="let star of stars">
+    <mat-list-item>{{star.name}}</mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
+</div>

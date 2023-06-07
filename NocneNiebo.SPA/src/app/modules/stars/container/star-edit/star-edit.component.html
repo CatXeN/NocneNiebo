@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Dodaj nowa gwiazde</h2>
+
+  <form [formGroup]="starForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nazwa</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Opis</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Wybierz konstelacje:</mat-label>
+      <mat-select formControlName="constellationId" name="constellatin">
+        <mat-option *ngFor="let constellation of constellations" [value]="constellation.id">
+          {{constellation.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <div class="action-panel">
+    <button class="cancel-constellation" [routerLink]="['/stars']" mat-raised-button color="warn">Anuluj</button>
+    <button class="add-star" (click)="add()" *ngIf="isNew === true" mat-raised-button color="primary">Dodaj</button>
+    <button class="add-star" (click)="save()" *ngIf="isNew === false" mat-raised-button color="primary">Zapisz</button>
+  </div>
+</div>

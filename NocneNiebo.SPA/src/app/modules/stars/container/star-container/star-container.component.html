@@ -1,0 +1,48 @@
+<div class="container">
+
+  <h3>
+    Gwiazdy
+  </h3>
+
+  <div class="action-panel">
+    <button class="add-star" mat-raised-button color="primary" (click)="router.navigate(['/stars/edit/undefined']);">Dodaj nowa konstelacje </button>
+  </div>
+
+  <div class="table-wrapper">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Opis </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="constelationId">
+        <th mat-header-cell *matHeaderCellDef> Nazwa konstelacji </th>
+        <td mat-cell *matCellDef="let element"> {{getConstellatioName(element.constelationId)}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Akcje </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-mini-fab color="primary" style="margin-right: 3px;" (click)="router.navigate(['/stars/edit/', element.id]);">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="deleteStar(element.id)" mat-mini-fab color="warn">
+            <mat-icon>delete</mat-icon>
+          </button></td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -6,5 +6,5 @@ export const getStars: RequestHandler = async (req, res) => {
     const stars = await prisma.star.findMany();
 
     res.status(StatusCodes.OK)
-    res.send({...stars})
+    res.send(stars)
 }
