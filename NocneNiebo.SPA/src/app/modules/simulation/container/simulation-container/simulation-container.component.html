@@ -1,0 +1,11 @@
+<div class="container">
+  <h2 class="header">Symulacja:</h2>
+
+  <div class="simulation" [ngClass]="setSky()">
+    <div [ngClass]="setMoon()"></div>
+
+    <div class="cloud" *ngIf="cloud > 0"></div>
+    <div class="cloud second" *ngIf="cloud > 1"></div>
+    <div class="cloud third" *ngIf="cloud > 2"></div>
+  </div>
+</div>

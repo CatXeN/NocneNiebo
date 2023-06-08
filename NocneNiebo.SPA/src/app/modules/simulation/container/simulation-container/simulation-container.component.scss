@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    margin-top: 60px;
+  }
+
+  .simulation {
+    width: 800px;
+    height: 600px;
+    border: 3px solid black;
+  }
+
+  .clear-sky {
+    background-image: url('../../../../../assets/skys/clearDaySky.jpg');
+    background-size: cover;
+  }
+
+  .clear-afternoon-sky {
+    background-image: url('../../../../../assets/skys/clearAfternoonSky.jpg');
+    background-size: cover;
+  }
+
+  .clear-noon-sky {
+    background-image: url('../../../../../assets/skys/clearNightSky.png');
+    background-size: cover;
+  }
+
+
+
+.rain-effect {
+  position: relative;
+  animation-delay: 1s;
+}
+
+.first-quarter {
+  position: relative;
+  left: 0;
+  top:0;
+  width: 200px;
+  height: 200px;
+  background-image: url('../../../../../assets/moon/first.png');
+  background-size: cover;
+  z-index: 1000;
+}
+
+.empty {
+  position: relative;
+  left: 0;
+  top:0;
+  width: 200px;
+  height: 200px;
+}
+
+.second-quarter {
+  position: relative;
+  left: 0;
+  top:0;
+  width: 200px;
+  height: 200px;
+  background-image: url('../../../../../assets/moon/second.png');
+  background-size: cover;
+  z-index: 1000;
+}
+
+.third-quarter {
+  position: relative;
+  left: 0;
+  top:0;
+  width: 200px;
+  height: 200px;
+  background-image: url('../../../../../assets/moon/third.png');
+  background-size: cover;
+  z-index: 1000;
+}
+
+.fourth-quarter {
+  position: relative;
+  left: 0;
+  top:0;
+  width: 200px;
+  height: 200px;
+  background-image: url('../../../../../assets/moon/fourth.png');
+  background-size: cover;
+  z-index: 1000;
+}
+
+.cloud {
+  position: relative;
+  left: 600px;
+  top: -160px;
+  width: 150px;
+  height: 100px;
+  background-image: url('../../../../../assets/cloud/cloud.png');
+  background-size: cover;
+}
+
+.second {
+  left: 400px;
+}
+
+.third {
+  top: -340px;
+  left: 200px;
+}
+
+.rain-effect:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../../assets/rain-300x300.png');
+  animation: rain 0.4s linear infinite;
+  opacity: 0;
+}
+
+
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+    opacity: 1;
+  }
+
+  100% {
+    background-position: 8% 80%;
+    opacity: 1;
+  }
+}

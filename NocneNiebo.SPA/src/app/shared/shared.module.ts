@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from './material';
+import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { MaterialModule } from './material';
         RouterModule,
         ReactiveFormsModule,
         MaterialModule,
-        FormsModule
+        FormsModule,
+        NgxMatTimepickerModule
     ],
     exports: [
         CommonModule,

@@ -24,3 +24,9 @@ model Constellation {
   description String
   stars Star[]
 }
+
+model Simulation {
+  id String @id
+  key String
+  value String
+}

@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'constellations',
         loadChildren: () => import('./modules/constellations/constellations.module').then(m => m.ConstellationsModule)
+      },
+      {
+        path: 'simulation',
+        loadChildren: () => import('./modules/simulation/simulation.module').then(m => m.SimulationModule)
       }
     ]
   }

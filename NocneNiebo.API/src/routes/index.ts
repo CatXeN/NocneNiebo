@@ -9,6 +9,8 @@ import { deleteStar } from './status/star/delete.star'
 import { deleteConstellation } from './status/constellation/delete.constellation'
 import { editStar } from './status/star/put.star'
 import { updateConstellation } from './status/constellation/put.constellation'
+import { updateSimulation } from './status/simulation/post.simulation'
+import { getSimulation } from './status/simulation/get.simulation'
 
 const router = express.Router()
 
@@ -33,4 +35,6 @@ router.get('/api/constellation', getConstellations)
 router.delete('/api/constellation/:id', deleteConstellation)
 router.put('/api/constellation', updateConstellation)
 
+router.post('/api/simulation', updateSimulation)
+router.get('/api/simulation', getSimulation)
 export default router
