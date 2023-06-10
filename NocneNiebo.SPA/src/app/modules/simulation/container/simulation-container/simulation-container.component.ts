@@ -49,9 +49,9 @@ export class SimulationContainerComponent implements OnInit {
 
     let hour = Number(this.simulation.date.split(':')[0]);
 
-    if (hour > 4 && hour < 17) {
+    if (hour >= 4 && hour < 17) {
       classes += 'clear-sky'
-    } else if (hour > 17 && hour < 22) {
+    } else if (hour >= 17 && hour <= 22) {
       classes += 'clear-afternoon-sky'
     } else {
       classes += 'clear-noon-sky'
